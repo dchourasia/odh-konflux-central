@@ -15,7 +15,7 @@ metadata:
     appstudio.openshift.io/application: opendatahub-builds
     appstudio.openshift.io/component: odh-ai-first-demo-ci
     pipelines.appstudio.openshift.io/type: build
-  name: odh-ai-first-demo-push
+  name: odh-ai-first-demo-on-push
   namespace: open-data-hub-tenant
 spec:
   params:
@@ -39,7 +39,7 @@ spec:
     - name: pathInRepo
       value: pipeline/multi-arch-container-build.yaml
   taskRunTemplate:
-    serviceAccountName: build-pipeline-sa
+    serviceAccountName: build-pipeline-odh-ai-first-demo
   workspaces:
   - name: git-auth
     secret:
